@@ -63,12 +63,18 @@ El método matches() del objeto Matcher se utiliza para comprobar si la cadena d
 
 ### CÓDIGO
 
-  public boolean validarCorreo(String correo) {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EmailValidator {
+    public boolean validarCorreo(String correo) {
         String regex = "^[a-zA-Z0-9._%+-]+@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(correo);
         return matcher.matches();
-    }}
+    }
+}
+
 
 
 ### EJEMPLO
