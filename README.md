@@ -155,16 +155,16 @@ El código proporcionado es un método en Java que elimina un registro de medica
 
 ### CAMPOS
 
-Confirmación del usuario:
+- **Confirmación del usuario**:
 El método recibe un parámetro idMedicacion, que representa el ID de la medicación que se quiere eliminar.
 Se muestra un cuadro de diálogo de confirmación al usuario con JOptionPane.showConfirmDialog, preguntando si está seguro de que desea eliminar la medicación con el ID especificado. El usuario puede seleccionar "Sí" o "No".
-Eliminación de la medicación:
+- **Eliminación de la medicación**:
 Si el usuario confirma la eliminación (es decir, selecciona "Sí"), se procede a eliminar el registro de la base de datos.
 Se define una cadena SQL para eliminar la fila correspondiente de la tabla Medicacion donde Id_Medicacion coincide con el ID proporcionado.
 Se utiliza una conexión a la base de datos (Connection) y una declaración preparada (PreparedStatement) para evitar ataques de inyección SQL y manejar de manera segura los parámetros de entrada.
 Se establece el valor del parámetro en la declaración preparada con pst.setInt(1, idMedicacion).
 Se ejecuta la declaración SQL con pst.executeUpdate(), que devuelve el número de filas afectadas por la operación.
-Mensajes de resultado:
+- **Mensajes de resultado**:
 Si el número de filas afectadas es mayor que cero, se muestra un mensaje de éxito indicando que la medicación fue eliminada exitosamente.
 Si no se afecta ninguna fila (lo que significa que no se encontró una medicación con ese ID), se muestra un mensaje de error indicando que no se encontró la medicación.
 Si ocurre una excepción SQL (SQLException) durante el proceso, se muestra un mensaje de error con la descripción del problema.
@@ -181,20 +181,20 @@ Este código Java es un método llamado mostrarDatosHistorialMedico, que se util
 
 ### CAMPOS
 
-Parámetros del método:
+- **Parámetros del método**:
 idMedicacion: un número entero que representa el identificador único de la medicación que se quiere consultar.
 textDescripcion: un objeto de tipo JTextArea donde se mostrarán los detalles de la medicación.
-Consulta SQL:
+- **Consulta SQL**:
 La consulta SQL selecciona los campos Id_Paciente, Descripcion, Tratamiento, Observaciones, y Fecha_Medicacion de la tabla Medicacion donde el Id_Medicacion coincida con el valor proporcionado como parámetro.
-Bloque try con recursos:
+- **Bloque try con recursos**:
 Se establece una conexión con la base de datos usando getConnection().
 Se prepara la consulta SQL usando un PreparedStatement para evitar inyecciones SQL.
 Se establece el valor del parámetro de la consulta con pst.setInt(1, idMedicacion).
-Ejecutar la consulta y procesar los resultados:
+- **Ejecutar la consulta y procesar los resultados**:
 La consulta se ejecuta con pst.executeQuery() y se obtiene un ResultSet que contiene los resultados.
 Si se encuentra un registro, se extraen los datos del ResultSet y se formatean como un texto, que se establece en el JTextArea (textDescripcion).
 Si no se encuentra ningún registro, se muestra un mensaje de error indicando que no se encontró la medicación con el ID proporcionado.
-Manejo de excepciones:
+- **Manejo de excepciones**:
 Si ocurre una excepción SQLException durante la conexión, preparación de la declaración, ejecución de la consulta o cualquier otra operación relacionada, se captura y se muestra un mensaje de error al usuario usando JOptionPane.
 
 ### CÓDIGO
@@ -210,10 +210,10 @@ El propósito de este código es restringir la entrada en el campo de texto text
 
 ### CAMPOS
 
-Método textnombrepKeyTyped: Este es un manejador de eventos que se ejecuta cada vez que se escribe una tecla en un componente de texto (textnombrep). El evento KeyEvent se pasa como argumento.
-evt.getKeyChar(): Obtiene el carácter que el usuario está intentando ingresar.
+- **Método textnombrepKeyTyped**: Este es un manejador de eventos que se ejecuta cada vez que se escribe una tecla en un componente de texto (textnombrep). El evento KeyEvent se pasa como argumento.
+- **evt.getKeyChar()**: Obtiene el carácter que el usuario está intentando ingresar.
 Character.isLetter(char): Verifica si el carácter es una letra (es decir, una letra del alfabeto).
-evt.consume(): Si el carácter no es una letra, este método detiene el procesamiento del evento, lo que significa que el carácter no se ingresará en el campo de texto.
+- **evt.consume()**: Si el carácter no es una letra, este método detiene el procesamiento del evento, lo que significa que el carácter no se ingresará en el campo de texto.
 
 ### CÓDIGO
 
@@ -227,9 +227,9 @@ Este código en Java está diseñado para manejar el evento de tipeo (es decir, 
 
 ### CAMPOS
 
-private void lblNoSeguridadSocialKeyTyped(java.awt.event.KeyEvent evt): Define un método privado que recibe un evento de teclado (KeyEvent) como argumento. Este evento proporciona información sobre la tecla que se ha presionado.
-if(!Character.isDigit(evt.getKeyChar())): Verifica si el carácter ingresado no es un dígito. evt.getKeyChar() obtiene el carácter que se ha presionado, y Character.isDigit() comprueba si ese carácter es un dígito del 0 al 9.
-evt.consume();: Si el carácter no es un dígito, este método consume el evento, lo que significa que el carácter no se procesará ni se mostrará en el componente. Esto efectivamente previene que caracteres no numéricos sean ingresados.
+- **private void lblNoSeguridadSocialKeyTyped(java.awt.event.KeyEvent evt)**: Define un método privado que recibe un evento de teclado (KeyEvent) como argumento. Este evento proporciona información sobre la tecla que se ha presionado.
+- **if(!Character.isDigit(evt.getKeyChar()))**: Verifica si el carácter ingresado no es un dígito. evt.getKeyChar() obtiene el carácter que se ha presionado, y Character.isDigit() comprueba si ese carácter es un dígito del 0 al 9.
+- **evt.consume();**: Si el carácter no es un dígito, este método consume el evento, lo que significa que el carácter no se procesará ni se mostrará en el componente. Esto efectivamente previene que caracteres no numéricos sean ingresados.
 
 ### CÓDIGO
 
@@ -243,10 +243,10 @@ Este método convierte una contraseña en un hash SHA-256 y devuelve el hash en 
 
 ### CAMPOS
 
-String contrasena: Es el parámetro de entrada al método, que representa la contraseña en texto plano que se desea cifrar.
-MessageDigest md: Es una instancia de la clase MessageDigest, utilizada para calcular el hash de la contraseña utilizando el algoritmo SHA-256.
-byte[] hash: Es un arreglo de bytes que almacena el resultado del cálculo del hash de la contraseña.
-StringBuilder sb: Es una instancia de StringBuilder utilizada para construir la cadena de texto que representa el hash en formato hexadecimal.
+- **String contrasena**: Es el parámetro de entrada al método, que representa la contraseña en texto plano que se desea cifrar.
+- **MessageDigest md**: Es una instancia de la clase MessageDigest, utilizada para calcular el hash de la contraseña utilizando el algoritmo SHA-256.
+- **byte[] hash**: Es un arreglo de bytes que almacena el resultado del cálculo del hash de la contraseña.
+- **StringBuilder sb**: Es una instancia de StringBuilder utilizada para construir la cadena de texto que representa el hash en formato hexadecimal.
 
 ### CÓDIGO
 
@@ -260,17 +260,17 @@ Este código es un método privado llamado sendEmail() en Java, que se utiliza p
 
 ### CAMPOS
 
-Obtener el transporte SMTP:
+- **Obtener el transporte SMTP**:
 Se obtiene un objeto Transport de la sesión de correo (mSession) utilizando el protocolo "smtp". El objeto Transport es responsable de enviar el mensaje a través del protocolo especificado.
-Conexión al servidor SMTP:
+- **Conexión al servidor SMTP**:
 El método connect establece una conexión con el servidor SMTP utilizando las credenciales de correo electrónico (emailFrom y passwordFrom). Estos datos representan el correo electrónico del remitente y su contraseña.
-Enviar el mensaje:
+- **Enviar el mensaje**:
 Se envía el mensaje mCorreo a los destinatarios especificados (mCorreo.getRecipients(Message.RecipientType.TO)). mCorreo es un objeto de tipo Message que contiene la información del correo electrónico, incluyendo los destinatarios, asunto, contenido, etc.
-Cerrar la conexión:
+- **Cerrar la conexión**:
 Después de enviar el correo, se cierra la conexión con el servidor SMTP.
-Notificación de éxito:
+- **Notificación de éxito**:
 Si el correo se envía correctamente, se muestra un cuadro de diálogo informando al usuario que el correo fue enviado con éxito. Además, se limpian algunas variables relacionadas con los archivos adjuntos (lblAdjuntos.setText("") y nombres_archivos = "").
-Manejo de excepciones:
+- **Manejo de excepciones**:
 El código maneja dos posibles excepciones:
 NoSuchProviderException: Se lanza si no se encuentra el proveedor de transporte especificado.
 MessagingException: Se lanza si ocurre algún problema con la mensajería (por ejemplo, problemas de autenticación o de red).
