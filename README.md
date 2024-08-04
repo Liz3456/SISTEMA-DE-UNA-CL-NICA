@@ -1,4 +1,4 @@
-# SISTEMA-DE-UNA-CL-NICA
+SISTEMA DE UNA CLINICA
 
 ## Descripción
 
@@ -20,7 +20,7 @@ El sistema es una interfaz que, dependiendo de los roles asignados dentro de una
 - JDK 22
 - Coherencia entre el programa y su base de datos
   
-# API
+API
 
 ## LOGIN
 
