@@ -50,19 +50,14 @@ El método matches() del objeto Matcher se utiliza para comprobar si la cadena d
 
 ### CÓDIGO
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class EmailValidator {
+```java
     public boolean validarCorreo(String correo) {
         String regex = "^[a-zA-Z0-9._%+-]+@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(correo);
         return matcher.matches();
-    }
-}
-
-
+    }}
+```
 
 ### EJEMPLO
 
@@ -93,6 +88,15 @@ return matcher.matches();: Se devuelve true si la contraseña cumple con todos l
 
 ### CÓDIGO
 
+```java
+public static boolean validarContrasena(String contrasena) {
+    String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$";
+    Pattern pattern = Pattern.compile(regex);
+    Matcher matcher = pattern.matcher(contrasena);
+    return matcher.matches();
+}
+```
+
 ### EJEMPLO
 
 ## COMPONENTE VER CONTRASEÑA
@@ -112,6 +116,18 @@ Este código es un manejador de eventos en una aplicación Java Swing, donde se 
 - **btnVer.setText("Ocultar");**: Cambia el texto del botón a "Ocultar" para indicar que el usuario puede hacer clic en él para ocultar la contraseña.
 
 ### CÓDIGO
+
+```java
+private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {                                       
+     if (textContraseña.getEchoChar() == (char)0) {
+        textContraseña.setEchoChar('●');
+        btnVer.setText("Mostrar"); 
+    } else {
+        textContraseña.setEchoChar((char)0);
+        btnVer.setText("Ocultar"); 
+    } 
+    }  
+```
 
 ### EJEMPLO
 
@@ -145,6 +161,29 @@ En caso de excepción SQL, se muestra un mensaje de error con la descripción de
 
 ### CÓDIGO
 
+```java
+    public void actualizarHistorialMedico(int idMedicacion, int idPaciente, String descripcion, String tratamiento, String observaciones, java.sql.Date fechaMedicacion) {
+        String sql = "UPDATE Medicacion SET Id_Paciente = ?, Descripcion = ?, Tratamiento = ?, Observaciones = ?, Fecha_Medicacion = ? WHERE Id_Medicacion = ?";
+                try (Connection conn = getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             pstmt.setInt(1, idPaciente);
+            pstmt.setString(2, descripcion);
+            pstmt.setString(3, tratamiento);
+            pstmt.setString(4, observaciones);
+            pstmt.setDate(5, fechaMedicacion);
+            pstmt.setInt(6, idMedicacion);
+            int rowsAffected = pstmt.executeUpdate();
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(null, "Medicación actualizada con éxito.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró la medicación con el ID proporcionado.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al actualizar la medicación: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+```
+
 ### EJEMPLO
 
 ## ELIMINAR
@@ -170,6 +209,27 @@ Si no se afecta ninguna fila (lo que significa que no se encontró una medicaci�
 Si ocurre una excepción SQL (SQLException) durante el proceso, se muestra un mensaje de error con la descripción del problema.
 
 ### CÓDIGO
+
+```java
+    public void eliminarHistorialMedico(int idMedicacion) {
+        int confirm = JOptionPane.showConfirmDialog(null, "¿Estás seguro de que deseas eliminar la medicación con ID " + idMedicacion + "?", "Confirmación", JOptionPane.YES_NO_OPTION);
+            if (confirm == JOptionPane.YES_OPTION) {
+            String sql = "DELETE FROM Medicacion WHERE Id_Medicacion = ?";
+            try (Connection con = getConnection();
+                 PreparedStatement pst = con.prepareStatement(sql)) {
+                pst.setInt(1, idMedicacion);
+                int rowsAffected = pst.executeUpdate();
+                   if (rowsAffected > 0) {
+                    JOptionPane.showMessageDialog(null, "Medicación eliminada exitosamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se encontró la medicación.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, "Error al eliminar la medicación: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }
+```
 
 ### EJEMPLO
 
@@ -199,6 +259,31 @@ Si ocurre una excepción SQLException durante la conexión, preparación de la d
 
 ### CÓDIGO
 
+```java
+    public void mostrarDatosHistorialMedico(int idMedicacion, javax.swing.JTextArea textDescripcion) {
+        String sql = "SELECT Id_Paciente, Descripcion, Tratamiento, Observaciones, Fecha_Medicacion FROM Medicacion WHERE Id_Medicacion = ?";
+           try (Connection con = getConnection();
+             PreparedStatement pst = con.prepareStatement(sql)) {
+            pst.setInt(1, idMedicacion);
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    textDescripcion.setText(
+                        "ID Paciente: " + rs.getInt("Id_Paciente") + "\n" +
+                        "Descripción: " + rs.getString("Descripcion") + "\n" +
+                        "Tratamiento: " + rs.getString("Tratamiento") + "\n" +
+                        "Observaciones: " + rs.getString("Observaciones") + "\n" +
+                        "Fecha Medicación: " + rs.getDate("Fecha_Medicacion")
+                    );
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se encontró la medicación con el ID proporcionado.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al mostrar los datos de la medicación: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+```
+
 ### EJEMPLO
 
 ## VALIDACIÓN TEXTO
@@ -217,6 +302,13 @@ Character.isLetter(char): Verifica si el carácter es una letra (es decir, una l
 
 ### CÓDIGO
 
+```java
+private void textnombrepKeyTyped(java.awt.event.KeyEvent evt) {                                     
+        if(!Character.isLetter(evt.getKeyChar()))
+        evt.consume();
+    }    
+```
+
 ### EJEMPLO
 
 ## VALIDACION NUMERO
@@ -232,6 +324,13 @@ Este código en Java está diseñado para manejar el evento de tipeo (es decir, 
 - **evt.consume();**: Si el carácter no es un dígito, este método consume el evento, lo que significa que el carácter no se procesará ni se mostrará en el componente. Esto efectivamente previene que caracteres no numéricos sean ingresados.
 
 ### CÓDIGO
+
+```java
+private void lblNoSeguridadSocialKeyTyped(java.awt.event.KeyEvent evt) {                                              
+       if(!Character.isDigit(evt.getKeyChar()))
+         evt.consume();
+    } 
+```
 
 ### EJEMPLO
 
@@ -249,6 +348,22 @@ Este método convierte una contraseña en un hash SHA-256 y devuelve el hash en 
 - **StringBuilder sb**: Es una instancia de StringBuilder utilizada para construir la cadena de texto que representa el hash en formato hexadecimal.
 
 ### CÓDIGO
+
+```java
+    private String encriptarContrasena(String contrasena) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hash = md.digest(contrasena.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hash) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Error al encriptar la contraseña", e);
+        }
+    }
+```
 
 ### EJEMPLO
 
@@ -276,6 +391,24 @@ NoSuchProviderException: Se lanza si no se encuentra el proveedor de transporte 
 MessagingException: Se lanza si ocurre algún problema con la mensajería (por ejemplo, problemas de autenticación o de red).
 
 ### CÓDIGO
+
+```java
+    private void sendEmail() {
+        try {
+            Transport mTransport = mSession.getTransport("smtp");
+            mTransport.connect(emailFrom, passwordFrom);
+            mTransport.sendMessage(mCorreo, mCorreo.getRecipients(Message.RecipientType.TO));
+            mTransport.close();
+            JOptionPane.showMessageDialog(null, "Correo enviado");
+            lblAdjuntos.setText("");
+            nombres_archivos = "";
+        } catch (NoSuchProviderException ex) {
+            Logger.getLogger(EnvioCorreos.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (MessagingException ex) {
+            Logger.getLogger(EnvioCorreos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+```
 
 ### EJEMPLO
 
