@@ -61,6 +61,9 @@ El método matches() del objeto Matcher se utiliza para comprobar si la cadena d
 
 ### EJEMPLO
 
+[![Whats-App-Image-2024-08-03-at-9-33-12-PM.jpg](https://i.postimg.cc/mgHSmWW5/Whats-App-Image-2024-08-03-at-9-33-12-PM.jpg)](https://postimg.cc/JsRJhgnN)
+[![Whats-App-Image-2024-08-03-at-9-35-06-PM.jpg](https://i.postimg.cc/x8QKpXYx/Whats-App-Image-2024-08-03-at-9-35-06-PM.jpg)](https://postimg.cc/G8M8Hh4G)
+
 ## VALIDACIÓN CONTRASEÑA
 
 ### DESCRIPCIÓN
@@ -99,6 +102,9 @@ public static boolean validarContrasena(String contrasena) {
 
 ### EJEMPLO
 
+[![Whats-App-Image-2024-08-03-at-9-34-16-PM.jpg](https://i.postimg.cc/mgng2KcB/Whats-App-Image-2024-08-03-at-9-34-16-PM.jpg)](https://postimg.cc/9DGhL8tn)
+[![Whats-App-Image-2024-08-03-at-9-34-40-PM.jpg](https://i.postimg.cc/c48DbnQh/Whats-App-Image-2024-08-03-at-9-34-40-PM.jpg)](https://postimg.cc/3dYCyWf0)
+
 ## COMPONENTE VER CONTRASEÑA
 
 ### DESCRIPCIÓN
@@ -130,6 +136,9 @@ private void btnVerActionPerformed(java.awt.event.ActionEvent evt) {
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-34-16-PM.jpg](https://i.postimg.cc/mgng2KcB/Whats-App-Image-2024-08-03-at-9-34-16-PM.jpg)](https://postimg.cc/9DGhL8tn)
+[![Whats-App-Image-2024-08-03-at-9-34-40-PM.jpg](https://i.postimg.cc/c48DbnQh/Whats-App-Image-2024-08-03-at-9-34-40-PM.jpg)](https://postimg.cc/3dYCyWf0)
 
 ## ACTUALIZAR
 
@@ -185,6 +194,8 @@ En caso de excepción SQL, se muestra un mensaje de error con la descripción de
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-36-55-PM.jpg](https://i.postimg.cc/L84Btg6N/Whats-App-Image-2024-08-03-at-9-36-55-PM.jpg)](https://postimg.cc/WhKkj3Zk)
 
 ## ELIMINAR
 
