@@ -19,9 +19,9 @@ El sistema es una interfaz que, dependiendo de los roles asignados dentro de una
 - Base de datos MySQL
 - JDK 22
 - Coherencia entre el programa y su base de datos
-- API
-- Sistema de Login
-- Validación de correo electrónico
+## API
+
+## LOGIN
 
 ## Validación de Correo
 
