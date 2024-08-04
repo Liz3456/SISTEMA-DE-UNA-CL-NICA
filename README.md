@@ -301,7 +301,6 @@ Si ocurre una excepción SQLException durante la conexión, preparación de la d
 
 ### EJEMPLO
 
-[![Whats-App-Image-2024-08-03-at-9-38-16-PM.jpg](https://i.postimg.cc/jjyxRXGj/Whats-App-Image-2024-08-03-at-9-38-16-PM.jpg)](https://postimg.cc/HJsD2QWG)
 [![Whats-App-Image-2024-08-03-at-9-40-09-PM.jpg](https://i.postimg.cc/1tcDVDNm/Whats-App-Image-2024-08-03-at-9-40-09-PM.jpg)](https://postimg.cc/qhqN9hLS)
 
 ## VALIDACIÓN TEXTO
