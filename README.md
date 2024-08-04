@@ -439,8 +439,8 @@ MessagingException: Se lanza si ocurre algún problema con la mensajería (por e
 [![Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg](https://i.postimg.cc/j52014Q2/Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg)](https://postimg.cc/nsyPj7Wf)
 
 ## EJEMPLO DEL FUNCIONAMIENTO COMPLETO
-https://youtu.be/5aFZsFDihoI
-
+Aqui puedes acceder al video https://youtu.be/5aFZsFDihoI
+Aqui puedes acceder al codigo completo https://drive.google.com/file/d/1fkxO6Gkd3YB0PquKrhrDRxTTIe6xSZyo/view?usp=drivesdk
 # AUTORES
 
 * [Sanjuan Vasquez Liz](https://github.com/Liz3456)
