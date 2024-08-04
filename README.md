@@ -438,6 +438,9 @@ MessagingException: Se lanza si ocurre algún problema con la mensajería (por e
 [![Whats-App-Image-2024-08-03-at-9-44-08-PM.jpg](https://i.postimg.cc/RhxdtMFm/Whats-App-Image-2024-08-03-at-9-44-08-PM.jpg)](https://postimg.cc/Vr4XQPnZ)
 [![Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg](https://i.postimg.cc/j52014Q2/Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg)](https://postimg.cc/nsyPj7Wf)
 
+## EJEMPLO DEL FUNCIONAMIENTO COMPLETO
+https://youtu.be/5aFZsFDihoI
+
 # AUTORES
 
 * [Sanjuan Vasquez Liz](https://github.com/Liz3456)
