@@ -196,6 +196,7 @@ En caso de excepción SQL, se muestra un mensaje de error con la descripción de
 ### EJEMPLO
 
 [![Whats-App-Image-2024-08-03-at-9-36-55-PM.jpg](https://i.postimg.cc/L84Btg6N/Whats-App-Image-2024-08-03-at-9-36-55-PM.jpg)](https://postimg.cc/WhKkj3Zk)
+[![Whats-App-Image-2024-08-03-at-9-37-26-PM.jpg](https://i.postimg.cc/nzWw5YMF/Whats-App-Image-2024-08-03-at-9-37-26-PM.jpg)](https://postimg.cc/62d04Zdg)
 
 ## ELIMINAR
 
@@ -243,6 +244,9 @@ Si ocurre una excepción SQL (SQLException) durante el proceso, se muestra un me
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-37-40-PM.jpg](https://i.postimg.cc/NG4x5xQ5/Whats-App-Image-2024-08-03-at-9-37-40-PM.jpg)](https://postimg.cc/6T8ZPn2X)
+[![Whats-App-Image-2024-08-03-at-9-38-15-PM.jpg](https://i.postimg.cc/MZCjZMQv/Whats-App-Image-2024-08-03-at-9-38-15-PM.jpg)](https://postimg.cc/kDy5f5wm)
 
 ## MOSTRAR
 
@@ -297,6 +301,9 @@ Si ocurre una excepción SQLException durante la conexión, preparación de la d
 
 ### EJEMPLO
 
+[![Whats-App-Image-2024-08-03-at-9-38-16-PM.jpg](https://i.postimg.cc/jjyxRXGj/Whats-App-Image-2024-08-03-at-9-38-16-PM.jpg)](https://postimg.cc/HJsD2QWG)
+[![Whats-App-Image-2024-08-03-at-9-40-09-PM.jpg](https://i.postimg.cc/1tcDVDNm/Whats-App-Image-2024-08-03-at-9-40-09-PM.jpg)](https://postimg.cc/qhqN9hLS)
+
 ## VALIDACIÓN TEXTO
 
 ### DESCRIPCIÓN
@@ -322,6 +329,8 @@ private void textnombrepKeyTyped(java.awt.event.KeyEvent evt) {
 
 ### EJEMPLO
 
+[![Whats-App-Image-2024-08-03-at-9-41-35-PM.jpg](https://i.postimg.cc/Gt63c5hH/Whats-App-Image-2024-08-03-at-9-41-35-PM.jpg)](https://postimg.cc/K3rhfQT2)
+
 ## VALIDACION NUMERO
 
 ### DESCRIPCIÓN
@@ -344,6 +353,8 @@ private void lblNoSeguridadSocialKeyTyped(java.awt.event.KeyEvent evt) {
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-42-02-PM.jpg](https://i.postimg.cc/8P3wSBR9/Whats-App-Image-2024-08-03-at-9-42-02-PM.jpg)](https://postimg.cc/7f3S1zQn)
 
 ## ENCRIPTACIÓN CONTRASEÑA
 
@@ -377,6 +388,8 @@ Este método convierte una contraseña en un hash SHA-256 y devuelve el hash en 
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-42-40-PM.jpg](https://i.postimg.cc/Kctgz7hC/Whats-App-Image-2024-08-03-at-9-42-40-PM.jpg)](https://postimg.cc/hhPGZdj0)
 
 ## ENVIAR CORREO
 
@@ -422,6 +435,9 @@ MessagingException: Se lanza si ocurre algún problema con la mensajería (por e
 ```
 
 ### EJEMPLO
+
+[![Whats-App-Image-2024-08-03-at-9-44-08-PM.jpg](https://i.postimg.cc/RhxdtMFm/Whats-App-Image-2024-08-03-at-9-44-08-PM.jpg)](https://postimg.cc/Vr4XQPnZ)
+[![Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg](https://i.postimg.cc/j52014Q2/Whats-App-Image-2024-08-03-at-9-44-31-PM.jpg)](https://postimg.cc/nsyPj7Wf)
 
 # AUTORES
 
