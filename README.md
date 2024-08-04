@@ -32,33 +32,20 @@ El siguiente código en Java valida si una dirección de correo electrónico cum
 
 ### CAMPOS
 
-Definición del método: public boolean validarCorreo(String correo) {
-
-public: El método es accesible desde cualquier lugar.
-
-boolean: El método devuelve un valor booleano (true o false).
-
-validarCorreo: Nombre del método, que indica que se utiliza para validar correos electrónicos.
-
-String correo: Parámetro de entrada que representa la dirección de correo electrónico a validar.
-
-Expresión regular (regex): String regex = "^[a-zA-Z0-9._%+-]+@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$";
-
+- **Definición del método**: public boolean validarCorreo(String correo)
+- **public**: El método es accesible desde cualquier lugar.
+- **boolean**: El método devuelve un valor booleano (true o false).
+- **validarCorreo**: Nombre del método, que indica que se utiliza para validar correos electrónicos.
+- **String correo**: Parámetro de entrada que representa la dirección de correo electrónico a validar.
+- **Expresión regular (regex)**: String regex = "^[a-zA-Z0-9._%+-]+@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$"
 La variable regex contiene una expresión regular que define el formato válido de las direcciones de correo electrónico aceptadas.
-
-^[a-zA-Z0-9._%+-]+: La parte anterior al símbolo @ puede contener letras mayúsculas y minúsculas (a-zA-Z), dígitos (0-9), y ciertos caracteres especiales (._%+-), y debe haber al menos un carácter.
-
-@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$: La parte después del símbolo @ debe ser uno de los dominios especificados (gmail.com, hotmail.com, yahoo.com, o itoaxaca.edu.mx). El símbolo | se utiliza para denotar opciones alternativas, y el símbolo \\ se usa para escapar el punto (.) que tiene un significado especial en las expresiones regulares.
-
-Compilación de la expresión regular: Pattern pattern = Pattern.compile(regex);
-
+- **^[a-zA-Z0-9._%+-]+**: La parte anterior al símbolo @ puede contener letras mayúsculas y minúsculas (a-zA-Z), dígitos (0-9), y ciertos caracteres especiales (._%+-), y debe haber al menos un carácter.
+- **@(gmail\\.com|hotmail\\.com|yahoo\\.com|itoaxaca\\.edu\\.mx)$**: La parte después del símbolo @ debe ser uno de los dominios especificados (gmail.com, hotmail.com, yahoo.com o itoaxaca.edu.mx). El símbolo | se utiliza para denotar opciones alternativas, y el símbolo \\ se usa para escapar el punto (.) que tiene un significado especial en las expresiones regulares.
+- **Compilación de la expresión regular**: Pattern pattern = Pattern.compile(regex);
 Se crea un objeto Pattern utilizando la expresión regular definida, lo que permite utilizarla para realizar coincidencias.
-
-Creación de un matcher: Matcher matcher = pattern.matcher(correo);
-
+- **Creación de un matcher**: Matcher matcher = pattern.matcher(correo);
 Se crea un objeto Matcher utilizando el patrón compilado y la cadena de correo electrónico proporcionada como argumento. Este objeto se utiliza para verificar si la cadena de correo coincide con el patrón.
-Retorno del resultado: return matcher.matches();
-
+- **Retorno del resultado**: return matcher.matches();
 El método matches() del objeto Matcher se utiliza para comprobar si la cadena de correo cumple con el patrón definido por la expresión regular. Si coincide, devuelve true; de lo contrario, devuelve false.
 
 ### CÓDIGO
@@ -87,22 +74,21 @@ El código proporcionado es un método en Java llamado validarContrasena, que se
 
 ### CAMPOS
 
-Definición del Método:
-public: El método es público, lo que significa que puede ser accedido desde cualquier parte del código.
-static: El método pertenece a la clase en lugar de a una instancia de la clase. Esto significa que puede ser llamado sin crear un objeto de la clase.
-boolean: El método devuelve un valor de tipo booleano, que puede ser true o false.
-String contrasena: El método acepta un argumento de tipo String que representa la contraseña que se desea validar.
-Expresión Regular (Regex):
+- **public**: El método es público, lo que significa que puede ser accedido desde cualquier parte del código.
+- **static**: El método pertenece a la clase en lugar de a una instancia de la clase. Esto significa que puede ser llamado sin crear un objeto de la clase.
+- **boolean**: El método devuelve un valor de tipo booleano, que puede ser true o false.
+- **String contrasena**: El método acepta un argumento de tipo String que representa la contraseña que se desea validar.
+- **Expresión Regular (Regex)**:
 String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!]).{8,}$";: Se define una cadena de texto que contiene una expresión regular (regex) utilizada para validar la contraseña. Esta expresión regular tiene los siguientes requisitos:
-^(?=.*[0-9]): La contraseña debe contener al menos un dígito (0-9).
-(?=.*[a-z]): La contraseña debe contener al menos una letra minúscula (a-z).
-(?=.*[A-Z]): La contraseña debe contener al menos una letra mayúscula (A-Z).
-(?=.*[@#$%^&+=!]): La contraseña debe contener al menos uno de los caracteres especiales mencionados: @#$%^&+=!.
-.{8,}$: La contraseña debe tener al menos 8 caracteres de longitud.
-Compilación y Coincidencia de Patrón:
+- **^(?=.*[0-9])**: La contraseña debe contener al menos un dígito (0-9).
+- **(?=.*[a-z])**: La contraseña debe contener al menos una letra minúscula (a-z).
+- **(?=.*[A-Z])**: La contraseña debe contener al menos una letra mayúscula (A-Z).
+- **(?=.*[@#$%^&+=!]): La contraseña debe contener al menos uno de los caracteres especiales mencionados: @#$%^&+=!.
+- **.{8,}$**: La contraseña debe tener al menos 8 caracteres de longitud.
+- **Compilación y Coincidencia de Patrón**:
 Pattern pattern = Pattern.compile(regex);: Se compila la expresión regular en un patrón que puede ser usado para realizar comparaciones.
-Matcher matcher = pattern.matcher(contrasena);: Se crea un objeto Matcher para comparar la contraseña proporcionada con el patrón definido.
-Retorno del Resultado:
+- **Matcher matcher = pattern.matcher(contrasena);**: Se crea un objeto Matcher para comparar la contraseña proporcionada con el patrón definido.
+- **Retorno del Resultado**:
 return matcher.matches();: Se devuelve true si la contraseña cumple con todos los criterios definidos en la expresión regular, y false en caso contrario.
 
 ### CÓDIGO
@@ -117,13 +103,13 @@ Este código es un manejador de eventos en una aplicación Java Swing, donde se 
 
 ### CAMPOS
 
-private void btnVerActionPerformed(java.awt.event.ActionEvent evt): Es el método que se ejecuta cuando se hace clic en el botón btnVer. El parámetro evt contiene la información del evento.
-if (textContraseña.getEchoChar() == (char)0): Comprueba si el carácter de eco (que oculta el texto en el campo de contraseña) es 0. Si es así, significa que el texto de la contraseña es visible.
-textContraseña.setEchoChar('●');: Si el texto es visible, se establece el carácter de eco a ●, lo que oculta el texto de la contraseña.
-btnVer.setText("Mostrar");: Cambia el texto del botón a "Mostrar" para indicar que el usuario puede hacer clic en él para ver la contraseña.
-else: Si el carácter de eco no es 0, significa que el texto está oculto.
-textContraseña.setEchoChar((char)0);: Se establece el carácter de eco a 0, lo que hace que el texto de la contraseña sea visible.
-btnVer.setText("Ocultar");: Cambia el texto del botón a "Ocultar" para indicar que el usuario puede hacer clic en él para ocultar la contraseña.
+- **private void btnVerActionPerformed(java.awt.event.ActionEvent evt)**: Es el método que se ejecuta cuando se hace clic en el botón btnVer. El parámetro evt contiene la información del evento.
+- **if (textContraseña.getEchoChar() == (char)0)**: Comprueba si el carácter de eco (que oculta el texto en el campo de contraseña) es 0. Si es así, significa que el texto de la contraseña es visible.
+- **textContraseña.setEchoChar('●');**: Si el texto es visible, se establece el carácter de eco a ●, lo que oculta el texto de la contraseña.
+- **btnVer.setText("Mostrar");**: Cambia el texto del botón a "Mostrar" para indicar que el usuario puede hacer clic en él para ver la contraseña.
+- **else**: Si el carácter de eco no es 0, significa que el texto está oculto.
+- **textContraseña.setEchoChar((char)0);**: Se establece el carácter de eco a 0, lo que hace que el texto de la contraseña sea visible.
+- **btnVer.setText("Ocultar");**: Cambia el texto del botón a "Ocultar" para indicar que el usuario puede hacer clic en él para ocultar la contraseña.
 
 ### CÓDIGO
 
@@ -137,25 +123,24 @@ Este código Java actualiza un registro en la base de datos de medicaciones usan
 
 ### CAMPOS
 
-Método: actualizarHistorialMedico
-Parámetros:
-int idMedicacion: Identificador único de la medicación a actualizar.
-int idPaciente: Identificador del paciente al que se le ha administrado la medicación.
-String descripcion: Descripción de la medicación.
-String tratamiento: Detalles del tratamiento asociado.
-String observaciones: Observaciones adicionales sobre la medicación.
-java.sql.Date fechaMedicacion: Fecha en que se administró la medicación.
+- **Método**: actualizarHistorialMedico
+- **Parámetros**:
+  int idMedicacion: Identificador único de la medicación a actualizar.
+  int idPaciente: Identificador del paciente al que se le ha administrado la medicación.
+- **String descripcion**: Descripción de la medicación.
+- **String tratamiento**: Detalles del tratamiento asociado.
+- **String observaciones**: Observaciones adicionales sobre la medicación.
+- **java.sql.Date fechaMedicacion**: Fecha en que se administró la medicación.
 SQL:
 La consulta SQL utilizada es un UPDATE para modificar un registro en la tabla Medicacion.
-Proceso:
-Conexión: Se establece una conexión a la base de datos mediante el método getConnection().
-Preparación de la sentencia: Se crea un PreparedStatement con la consulta SQL.
-Asignación de parámetros: Se establecen los valores de los parámetros en la consulta SQL utilizando los métodos setInt(), setString(), y setDate().
-Ejecución de la consulta: Se ejecuta la actualización mediante pstmt.executeUpdate(), que devuelve el número de filas afectadas.
-Manejo de resultados:
+- **Conexión**: Se establece una conexión a la base de datos mediante el método getConnection().
+- **Preparación de la sentencia**: Se crea un PreparedStatement con la consulta SQL.
+- **Asignación de parámetros**: Se establecen los valores de los parámetros en la consulta SQL utilizando los métodos setInt(), setString(), y setDate().
+- **Ejecución de la consulta**: Se ejecuta la actualización mediante pstmt.executeUpdate(), que devuelve el número de filas afectadas.
+- **Manejo de resultados**:
 Si la actualización afecta a al menos una fila, se muestra un mensaje de éxito.
 Si no se afecta ninguna fila, se muestra un mensaje de error indicando que no se encontró la medicación con el ID proporcionado.
-Manejo de excepciones:
+- **Manejo de excepciones**:
 En caso de excepción SQL, se muestra un mensaje de error con la descripción del problema.
 
 ### CÓDIGO
